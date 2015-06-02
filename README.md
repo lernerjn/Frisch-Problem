@@ -1,12 +1,11 @@
-# Minimum Rank Matrix Completion
-For an example of minimum rank matrix completion, based on a random n x n rank r matrix (where 3/4 of the entries are sampled), run
+# Frisch Problem - Minimize the Rank of the Covariance Matrix Based on Noisy Data
+For an example of the Frisch Problem, based on random "observations," run main.m.
+To solve the Frisch Problem on an m x m, rank r matrix with T observations and random noise between 0 and 1 added (as Sigma_tilde) and using Sigma^-1 as the weight, run
 
-	[X, rankX, M, Q] = Min_Rank_Matrix_Completion( n, n, 3*n^2/4, 1e-6)
+	[rank_target, trace_min, noise, D] = TraceMinObsWeight( m, T, r, 1)
 
-To run this code on an existing matrix, M, where the non-sampled entries are NaN, run
+To solve the Frisch Problem on an m x m, rank r matrix with T observations and random noise between 0 and 1 added (as Sigma_tilde) and using an interative reweighting process, run
 	
-	Note: Q = [ 1 1 1; 2 2 2; 3 3 3] is the matrix we are trying to recover.
-	M = [ nan nan 1; 2 2 nan ; 3 3 3];
-	[X, rankX, M] = Min_Rank_Matrix_Completion( M, 1e-6);
+	[rank_target, trace_min, noise, D] = TraceMinObsWeightIter( m, T, r, 1)
 
 Background on this is provided in the Analysis folder.
