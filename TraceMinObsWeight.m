@@ -13,10 +13,10 @@ function [ rank_target, trace_min , noise , D] = TraceMinObsWeight( m, T ,r , ra
 %           and D is diagonal}
 %
 % Inputs:
-%       r: the desired rank of the matrix Sigma_hat
 %       m: Sigma_hat will be an m x m matrix
-%       range: the range for the random numbers in Sigma_hat
-%       multiplier: a multiplier for the noise, Sigma_tilde
+%       T: the number of observations 
+%       r: the desired rank of the matrix Sigma_hat
+%       rand_multiplier: a multiplier for the noise, Sigma_tilde
 %
 % Outputs:
 %       rank_target: this should be r, the desired rank for Sigma_hat
