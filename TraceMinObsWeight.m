@@ -20,6 +20,11 @@ function [ rank_target, trace_min , noise , D] = TraceMinObsWeight( m, T ,r , ra
 %
 % Outputs:
 %       rank_target: this should be r, the desired rank for Sigma_hat
+%       trace_min: the actual estimate of the rank
+%       noise: Sigma_tilde, as computed before the convex optimization, for
+%           reference
+%       D: the D used to find the optimal trace
+%       
 
 
 % Create the observations, using a normal distribution
